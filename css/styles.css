@@ -513,13 +513,16 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
     background-color:rgba(46, 47, 66, 0.4);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.model-overlay .is-open {
+.model-overlay.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -532,7 +535,6 @@ img {
     min-height: 584px;
     border-radius: 4px;
     transform: translate(-50%, -50%);
-
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -616,9 +618,10 @@ margin-top: 4px;
     padding-left: 36px;
     font-size: 14px;
 }
-.input-icon:hover,
-.input-icon:focus {
-    background-color: #4d5ae5;
+.input-wrapper:hover .input-icon {
+/*.input-icon:hover,
+.input-icon:focus { */
+    fill: #4d5ae5;
 }
 .input-box:hover,
 .input-box:focus {
@@ -630,6 +633,11 @@ padding-top: 8px;
 padding-left: 16px;
 height: 120px;
 width: 100%;
+border-radius: 4px;
+}
+.contact-description .input-box-comment:hover,
+.contact-description .input-box-comment:focus {
+    border-color: #4d5ae5;
 }
 .input-box-comment::placeholder {
     font-weight: 400;
